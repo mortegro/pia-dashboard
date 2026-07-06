@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Leistungen Dashboard</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Leistungen je Mitarbeiter</h1>
+    <div class="file-name-center">
+      <span id="fileStatus" class="file-status"></span>
+    </div>
+    <div class="header-actions">
+      <label id="headerFileBtn" class="file-btn hidden">
+        <span id="fileLabel">Andere Datei laden</span>
+        <input type="file" id="fileInput" accept=".xls,.xlsx,.xml" />
+      </label>
+      <button id="filterDrawerToggle" class="icon-btn hidden" aria-label="Zeitraum &amp; Mitarbeiter" title="Zeitraum &amp; Mitarbeiter">&#9776;</button>
+      <button id="settingsToggle" class="icon-btn" aria-label="Einstellungen" title="Einstellungen">&#9881;</button>
+      <div id="settingsPanel" class="settings-panel hidden">
+        <div class="settings-title">Vergütungsgrundlage</div>
+        <div class="tarif-row">
+          <span id="tarifLabel" class="tarif-label"></span>
+          <label class="tarif-file-btn">
+            <span>Andere Vergütungstabelle laden (.csv)</span>
+            <input type="file" id="tarifInput" accept=".csv" />
+          </label>
+          <span id="tarifStatus" class="file-status"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+  <main id="app" class="app">
+    <section id="emptyState" class="empty-state">
+      <label class="file-btn file-btn-large">
+        <span>Datei laden (.xls / .xlsx / .xml)</span>
+        <input type="file" id="emptyFileInput" accept=".xls,.xlsx,.xml" />
+      </label>
+      <p class="empty-info">Lade eine konsolidierte Leistungen-Tabelle, um das Dashboard zu befüllen.</p>
+    </section>
+
+    <section id="loadedContent" class="hidden">
+      <div class="view-tabs" id="viewTabs">
+        <button data-view="overview" class="active">Übersicht</button>
+        <button data-view="detail">Detailtabelle (Prüfung)</button>
+      </div>
+
+      <section id="overviewView">
+        <section id="tarifWarning" class="tarif-warning hidden"></section>
+
+        <section class="summary-row" id="summaryRow"></section>
+
+        <section class="table-section">
+          <p id="tableEmpty" class="table-empty hidden">Keine Daten fuer diesen Zeitraum / Filter.</p>
+          <table id="dataTable">
+            <thead>
+              <tr><th>Mitarbeiter</th><th>Anzahl Leistungen</th><th>Vergütung (€)</th><th class="bar-col"></th></tr>
+            </thead>
+            <tbody id="dataTableBody"></tbody>
+            <tfoot>
+              <tr><td>Gesamt</td><td id="totalCount"></td><td id="totalAmount"></td><td></td></tr>
+            </tfoot>
+          </table>
+        </section>
+      </section>
+
+      <section id="detailView" class="hidden">
+        <section class="controls">
+          <div class="control-group">
+            <span class="control-label">Vergütung € von</span>
+            <input type="number" id="detailAmountFrom" class="number-input" placeholder="min" step="0.01" />
+          </div>
+          <div class="control-group">
+            <span class="control-label">bis</span>
+            <input type="number" id="detailAmountTo" class="number-input" placeholder="max" step="0.01" />
+          </div>
+
+          <div class="control-group detail-search-group">
+            <input type="text" id="detailSearch" class="search-input" placeholder="Suche Leistungscode / Beschreibung…" />
+          </div>
+
+          <div class="control-group">
+            <button id="detailResetFilters" class="filter-btn">Preis-/Suchfilter zurücksetzen</button>
+          </div>
+        </section>
+
+        <section class="table-section">
+          <p id="detailTableEmpty" class="table-empty hidden">Keine Einträge fuer diese Filter.</p>
+          <div class="table-scroll">
+            <table id="detailTable">
+              <thead>
+                <tr>
+                  <th data-sort="date" class="sortable">Datum</th>
+                  <th data-sort="employee" class="sortable">Mitarbeiter</th>
+                  <th data-sort="leistung" class="sortable">Leistung</th>
+                  <th>Beschreibung</th>
+                  <th data-sort="menge" class="sortable">Menge</th>
+                  <th data-sort="price" class="sortable">Einzelpreis (€)</th>
+                  <th data-sort="amount" class="sortable">Vergütung (€)</th>
+                </tr>
+              </thead>
+              <tbody id="detailTableBody"></tbody>
+            </table>
+          </div>
+          <div class="detail-footer">
+            <span id="detailSummary"></span>
+            <div class="pagination">
+              <button id="detailPrevPage" class="nav-btn">&#8249;</button>
+              <span id="detailPageLabel" class="period-label"></span>
+              <button id="detailNextPage" class="nav-btn">&#8250;</button>
+            </div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <aside id="filterDrawer" class="filter-drawer hidden" aria-label="Zeitraum und Mitarbeiter">
+    <div class="filter-drawer-header">
+      <h2>Zeitraum &amp; Mitarbeiter</h2>
+      <button id="drawerClose" class="icon-btn" aria-label="Schließen">&times;</button>
+    </div>
+    <div class="filter-drawer-body">
+      <div class="drawer-section">
+        <span class="control-label">Zeitraum</span>
+        <div class="segmented segmented-full" id="granularity">
+          <button data-gran="week" class="active">Woche</button>
+          <button data-gran="month">Monat</button>
+          <button data-gran="quarter">Quartal</button>
+        </div>
+        <div class="period-nav drawer-period-nav">
+          <button id="prevPeriod" class="nav-btn" aria-label="Vorheriger Zeitraum">&#8249;</button>
+          <span id="periodLabel" class="period-label"></span>
+          <button id="nextPeriod" class="nav-btn" aria-label="Naechster Zeitraum">&#8250;</button>
+        </div>
+      </div>
+
+      <div class="drawer-section">
+        <div class="drawer-section-header">
+          <span class="control-label">Mitarbeiter</span>
+          <span id="employeeCount"></span>
+        </div>
+        <div class="employee-panel-actions">
+          <button id="selectAll">Alle</button>
+          <button id="selectNone">Keine</button>
+        </div>
+        <div id="employeeList" class="employee-list drawer-employee-list"></div>
+      </div>
+    </div>
+  </aside>
+  </div>
+
+  <div id="dropHint" class="drop-hint hidden">Datei hier ablegen</div>
+
+  <script src="js/xlsx.full.min.js"></script>
+  <script src="js/tarif-default.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

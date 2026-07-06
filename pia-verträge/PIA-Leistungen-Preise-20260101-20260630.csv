@@ -1,0 +1,255 @@
+Bereich;Kategorie;Entgeltschluessel;Geb.Nr.;Minuten;Verguetung_EUR;Leistungsbeschreibung
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210100;100;;9,32;Qualifizierte Arzneimittelverordnung ohne ärztlichen Patientenkontakt (Abrechnungsregeln: am Tag einer ärztlichen Leistungserbringung oder am Folgetag nicht abrechenbar; ohne weitere ärztliche Leistungserbringung im Quartal nicht an zwei aufeinanderfolgenden Quartalen abrechenbar; nur abrechenbar bei Erfüllung der Dokumentationsanforderungen gemäß Anlage 4 Punkt 2.1.12)
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210110;110;10;16,07;Ärztliche Leistungen bis 10 Minuten für Leistungen der sozialpsychiatrischen Grundversorgung, Krisenintervention einschl. amb. Notfallbehandlung, spezifische Einzelbehandlung/Betreuung, Psychodiagnostik
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210111;111;20;32,22;Ärztliche Leistungen bis 20 Minuten wie oben
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210112;112;40;64,45;Ärztliche Leistungen bis 40 Minuten wie oben
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210113;113;60;96,66;Ärztliche Leistungen bis 60 Minuten wie oben
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210114;114;90;144,99;Ärztliche Leistungen bis 90 Minuten wie oben, ohne Videosprechstunde (nur mit entsprechender Begründung sind längere Zeiten abrechenbar); die Abrechnung längerer Behandlungszeiten erfolgt mittels Geb.Nr. 110 – nur in Verbindung mit Geb.Nr. 114 ist eine Mehrfachabrechnung der Geb.Nr. 110 möglich
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210130;130;10;16,07;Ärztliche Leistungen bis 10 Minuten für Leistungen im Rahmen Videosprechstunde
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210131;131;20;32,22;Ärztliche Leistungen bis 20 Minuten für Leistungen im Rahmen Videosprechstunde
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210132;132;40;64,45;Ärztliche Leistungen bis 40 Minuten für Leistungen im Rahmen Videosprechstunde
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210133;133;60;96,66;Ärztliche Leistungen bis 60 Minuten für Leistungen im Rahmen Videosprechstunde
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210134;134;90;144,99;Ärztliche Leistungen bis 90 Minuten für Leistungen im Rahmen Videosprechstunde
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210143;143;60;27,62;Ärztliche Leistungen bis 60 Minuten für eine spezifische Behandlung/Betreuung in der Kleingruppe (bis zu fünf Patienten)
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210144;144;90;41,41;Ärztliche Leistungen bis 90 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210145;145;120;55,26;Ärztliche Leistungen bis 120 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210153;153;60;13,79;Ärztliche Leistungen bis 60 Minuten für eine spezifische Behandlung/Betreuung in der Großgruppe (mehr als fünf Patienten, höchstens 12 Patienten)
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210154;154;90;20,70;Ärztliche Leistungen bis 90 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210155;155;120;27,62;Ärztliche Leistungen bis 120 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210160;160;10;16,07;Fahrtzeit dazu bis 10 Minuten
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210161;161;20;32,22;Fahrtzeit dazu bis 20 Minuten
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210162;162;40;64,45;Fahrtzeit dazu bis 40 Minuten
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210163;163;60;96,66;Fahrtzeit dazu bis 60 Minuten
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210164;164;90;144,99;Fahrtzeit dazu bis 90 Minuten
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210170;170;;14,22;Grundpauschale für Laborleistungen je Fall und Quartal (für EKG, EEG, Labor)
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210171;171;;27,60;Medikamentenspiegelung (je Untersuchungsgang) alle Spiegelbestimmungen unter Angabe der Substanz(en) oder Substanzgruppe(n), zusätzlich zur Geb.Nr. 170 und ggf. mehrfach pro Quartal abrechenbar; sofern die Leistung nicht im eigenen Labor durchgeführt wird, ist die Überweisung an ein externes Labor möglich
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210172;172;;4,88;Qualitative Stäbchentests (Suchtests) je Substanz/Substanzgruppe: Amphetamine, Barbiturate, Benzodiazepine, Cannabinoide, Kokain, Methadon, Opiate, u.a. Je Parameter nur bei substituierten Patienten zusätzlich zu Geb.Nr. 170 abrechenbar
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210173;173;;12,91;Quantitative und semiquantitative Bestimmungen (je Untersuchung): Amphetamine, Barbiturate, Benzodiazepine, Cannabinoide, Kokain, Methadon, Opiate, u.a. Ggf. mehrfach pro Quartal nur bei substituierten Patienten zusätzlich zu Geb.Nr. 170, 171 und 172 abrechenbar, jedoch nur bis zu dreimal bei Untersuchungen aus demselben Körpermaterial; Höchstwert 38,73 EUR; sofern die Leistung nicht im eigenen Labor durchgeführt wird, ist die Überweisung an ein externes Labor möglich
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210180;180;;179,09;CT-Einzelleistung
+Erwachsenenpsychiatrie;Ärztliche Leistungen;35210190;190;;473,80;NMR-Einzelleistung
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210210;210;10;14,39;Leistungen von Psychologen bis 10 Minuten für Leistungen der sozialpsychiatrischen Grundversorgung, Krisenintervention einschl. amb. Notfallbehandlung, spezifische Einzelbehandlung/Betreuung, Psychodiagnostik
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210211;211;20;28,78;Leistungen von Psychologen bis 20 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210212;212;40;57,56;Leistungen von Psychologen bis 40 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210213;213;60;86,34;Leistungen von Psychologen bis 60 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210214;214;90;129,47;Leistungen von Psychologen bis 90 Minuten wie oben, ohne Videosprechstunde (nur mit entsprechender Begründung sind längere Zeiten abrechenbar); die Abrechnung längerer Behandlungszeiten erfolgt mittels Geb.Nr. 210 – nur in Verbindung mit Geb.Nr. 214 ist eine Mehrfachabrechnung der Geb.Nr. 210 möglich
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210230;230;10;14,39;Leistungen von Psychologen bis 10 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210231;231;20;28,78;Leistungen von Psychologen bis 20 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210232;232;40;57,56;Leistungen von Psychologen bis 40 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210233;233;60;86,34;Leistungen von Psychologen bis 60 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210234;234;90;129,47;Leistungen von Psychologen bis 90 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210243;243;60;24,66;Leistungen von Psychologen bis 60 Minuten für eine spezifische Behandlung/Betreuung in der Kleingruppe (bis zu fünf Patienten)
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210244;244;90;37,00;Leistungen von Psychologen bis 90 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210245;245;120;49,34;Leistungen von Psychologen bis 120 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210253;253;60;12,36;Leistungen von Psychologen bis 60 Minuten für eine spezifische Behandlung/Betreuung in der Großgruppe (mehr als fünf Patienten, höchstens 12 Patienten)
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210254;254;90;18,50;Leistungen von Psychologen bis 90 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210255;255;120;24,66;Leistungen von Psychologen bis 120 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210260;260;10;14,39;Fahrtzeit dazu bis 10 Minuten
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210261;261;20;28,78;Fahrtzeit dazu bis 20 Minuten
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210262;262;40;57,56;Fahrtzeit dazu bis 40 Minuten
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210263;263;60;86,34;Fahrtzeit dazu bis 60 Minuten
+Erwachsenenpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35210264;264;90;129,47;Fahrtzeit dazu bis 90 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210310;310;10;9,32;Leistungen von Pflegepersonal bis 10 Minuten für Leistungen der sozialpsychiatrischen Grundversorgung, Krisenintervention einschl. Notfallbehandlung, spezifische Einzelbehandlung/Betreuung
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210311;311;20;18,63;Leistungen von Pflegepersonal bis 20 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210312;312;40;37,22;Leistungen von Pflegepersonal bis 40 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210313;313;60;55,86;Leistungen von Pflegepersonal bis 60 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210314;314;90;83,77;Leistungen von Pflegepersonal bis 90 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210315;315;120;111,66;Leistungen von Pflegepersonal bis 120 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210316;316;180;167,49;Leistungen von Pflegepersonal bis 180 Minuten wie oben (nur mit entsprechender Begründung sind längere Zeiten abrechenbar); die Abrechnung längerer Behandlungszeiten erfolgt mittels Geb.Nr. 310 – nur in Verbindung mit Geb.Nr. 316 ist eine Mehrfachabrechnung der Geb.Nr. 310 möglich
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210343;343;60;15,98;Leistungen von Pflegepersonal bis 60 Minuten für eine spezifische Behandlung/Betreuung in der Kleingruppe (bis zu fünf Patienten)
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210344;344;90;23,95;Leistungen von Pflegepersonal bis 90 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210345;345;120;31,88;Leistungen von Pflegepersonal bis 120 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210346;346;180;47,86;Leistungen von Pflegepersonal bis 180 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210353;353;60;7,99;Leistungen von Pflegepersonal bis 60 Minuten für eine spezifische Behandlung/Betreuung in der Großgruppe (mehr als fünf Patienten, höchstens 12 Patienten)
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210354;354;90;11,99;Leistungen von Pflegepersonal bis 90 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210355;355;120;15,98;Leistungen von Pflegepersonal bis 120 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210356;356;180;23,96;Leistungen von Pflegepersonal bis 180 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210360;360;10;9,32;Fahrtzeit dazu bis 10 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210361;361;20;18,63;Fahrtzeit dazu bis 20 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210362;362;40;37,22;Fahrtzeit dazu bis 40 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210363;363;60;55,86;Fahrtzeit dazu bis 60 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210364;364;90;83,77;Fahrtzeit dazu bis 90 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210365;365;120;111,66;Fahrtzeit dazu bis 120 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Pflegepersonal;35210366;366;180;167,49;Fahrtzeit dazu bis 180 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210410;410;10;11,91;Leistungen von Sozialpädagogen bis 10 Minuten für Leistungen der sozialpsychiatrischen Grundversorgung, Krisenintervention einschl. Notfallbehandlung, spezifische Einzelbehandlung/Betreuung
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210411;411;20;23,90;Leistungen von Sozialpädagogen bis 20 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210412;412;40;47,74;Leistungen von Sozialpädagogen bis 40 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210413;413;60;71,61;Leistungen von Sozialpädagogen bis 60 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210414;414;90;107,43;Leistungen von Sozialpädagogen bis 90 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210415;415;120;143,20;Leistungen von Sozialpädagogen bis 120 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210416;416;180;214,80;Leistungen von Sozialpädagogen bis 180 Minuten wie oben (nur mit entsprechender Begründung sind längere Zeiten abrechenbar); die Abrechnung längerer Behandlungszeiten erfolgt mittels Geb.Nr. 410 – nur in Verbindung mit Geb.Nr. 416 ist eine Mehrfachabrechnung der Geb.Nr. 410 möglich
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210443;443;60;20,46;Leistungen von Sozialpädagogen bis 60 Minuten für eine spezifische Behandlung/Betreuung in der Kleingruppe (bis zu fünf Patienten)
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210444;444;90;30,65;Leistungen von Sozialpädagogen bis 90 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210445;445;120;40,92;Leistungen von Sozialpädagogen bis 120 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210446;446;180;61,38;Leistungen von Sozialpädagogen bis 180 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210453;453;60;10,20;Leistungen von Sozialpädagogen bis 60 Minuten für eine spezifische Behandlung/Betreuung in der Großgruppe (mehr als fünf Patienten, höchstens 12 Patienten)
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210454;454;90;15,38;Leistungen von Sozialpädagogen bis 90 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210455;455;120;20,46;Leistungen von Sozialpädagogen bis 120 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210456;456;180;30,65;Leistungen von Sozialpädagogen bis 180 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210460;460;10;11,91;Fahrtzeit dazu bis 10 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210461;461;20;23,90;Fahrtzeit dazu bis 20 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210462;462;40;47,74;Fahrtzeit dazu bis 40 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210463;463;60;71,61;Fahrtzeit dazu bis 60 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210464;464;90;107,43;Fahrtzeit dazu bis 90 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210465;465;120;143,20;Fahrtzeit dazu bis 120 Minuten
+Erwachsenenpsychiatrie;Leistungen v. Sozialpädagogen;35210466;466;180;214,80;Fahrtzeit dazu bis 180 Minuten
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210511;511;20;20,52;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 20 Minuten für Leistungen der sozialpsychiatrischen Grundversorgung, spezifische Einzelbehandlung/Betreuung
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210512;512;40;41,09;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 40 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210513;513;60;61,59;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 60 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210514;514;90;92,41;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 90 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210515;515;120;123,21;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 120 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210516;516;180;184,76;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 180 Minuten wie oben
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210543;543;60;17,54;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 60 Minuten für eine spezifische Behandlung/Betreuung in der Kleingruppe (bis zu fünf Patienten)
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210544;544;90;26,37;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 90 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210545;545;120;35,19;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 120 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210546;546;180;52,80;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 180 Minuten wie oben (Kleingruppe)
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210553;553;60;8,79;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 60 Minuten für eine spezifische Behandlung/Betreuung in der Großgruppe (mehr als fünf Patienten, höchstens 12 Patienten)
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210554;554;90;13,22;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 90 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210555;555;120;17,54;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 120 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210556;556;180;26,38;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 180 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210557;557;240;35,19;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 240 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210558;558;300;44,04;Leistungen von Arbeits- und Beschäftigungstherapeuten bis 300 Minuten wie oben (Großgruppe)
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210561;561;20;20,52;Fahrtzeit dazu bis 20 Minuten
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210562;562;40;41,09;Fahrtzeit dazu bis 40 Minuten
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210563;563;60;61,59;Fahrtzeit dazu bis 60 Minuten
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210564;564;90;92,41;Fahrtzeit dazu bis 90 Minuten
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210565;565;120;123,21;Fahrtzeit dazu bis 120 Minuten
+Erwachsenenpsychiatrie;Leistungen von Arbeits- und Beschäftigungstherapeuten;35210566;566;180;184,76;Fahrtzeit dazu bis 180 Minuten
+Erwachsenenpsychiatrie;Fallbesprechung;35210600;600;10;61,98;Fallbesprechung mindestens 10 Minuten multiprofessionelle Fallbesprechung durch Standardgruppe (Arzt, Psychologe, Pflegekraft, Sozialpädagoge, sonstiger nichtärztlicher Therapeut) je Patient max. 2 mal im Quartal. Mind. 3 Mitarbeiter mind. zweier unterschiedlicher Berufsgruppen müssen anwesend sein. Daneben ist die Gebührennummer 609 nicht abrechenbar
+Erwachsenenpsychiatrie;Fallbesprechung;35210609;609;20;124,04;Fallbesprechung mindestens 20 Minuten multiprofessionelle Fallbesprechung durch Standardgruppe (Arzt, Psychologe, Pflegekraft, Sozialpädagoge, sonstiger nichtärztlicher Therapeut) je Patient 1x im Quartal. Mind. 4 Mitarbeiter mind. dreier unterschiedlicher Berufsgruppen müssen anwesend sein
+Erwachsenenpsychiatrie;Personalaufwand bei apparativer Diagnostik und Therapie;35210770;770;10;9,32;Personalaufwand bei apparativer Diagnostik und Therapie bis 10 Minuten (z.B. TMS, rTMS, neuropsychologische Untersuchungen, Lichttherapie); unabhängig von betreuter Berufsgruppe (Pflegekraft, MFA, MTA); ggf. mehrfach pro Quartal zusätzlich zu den Geb.-Nr. 17x abrechenbar
+Erwachsenenpsychiatrie;Personalaufwand bei apparativer Diagnostik und Therapie;35210771;771;20;18,63;Personalaufwand bei apparativer Diagnostik und Therapie bis 20 Minuten (z.B. EKG, TMS, rTMS, neuropsychologische Untersuchungen, Lichttherapie); unabhängig von betreuter Berufsgruppe (Pflegekraft, MFA, MTA); ggf. mehrfach pro Quartal zusätzlich zu den Geb.-Nr. 17x abrechenbar
+Erwachsenenpsychiatrie;Personalaufwand bei apparativer Diagnostik und Therapie;35210772;772;40;37,22;Personalaufwand bei apparativer Diagnostik und Therapie bis 40 Minuten (z.B. TMS, rTMS, neuropsychologische Untersuchungen, Lichttherapie); unabhängig von betreuter Berufsgruppe (Pflegekraft, MFA, MTA); ggf. mehrfach pro Quartal zusätzlich zu den Geb.-Nr. 17x abrechenbar
+Erwachsenenpsychiatrie;Personalaufwand bei apparativer Diagnostik und Therapie;35210773;773;60;55,86;Personalaufwand bei apparativer Diagnostik und Therapie bis 60 Minuten (z.B. EEG, TMS, rTMS, neuropsychologische Untersuchungen, Lichttherapie); unabhängig von betreuter Berufsgruppe (Pflegekraft, MFA, MTA); ggf. mehrfach pro Quartal zusätzlich zu den Geb.-Nr. 17x abrechenbar
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220100;0100;;9,32;Qualifizierte Arzneimittelverordnung ohne ärztlichen Patientenkontakt (Abrechnungsregeln: am Tag einer ärztlichen Leistungserbringung oder am Folgetag nicht abrechenbar; ohne weitere ärztliche Leistungserbringung im Quartal nicht an zwei aufeinanderfolgenden Quartalen abrechenbar; nur abrechenbar bei Erfüllung der Dokumentationsanforderungen gemäß Anlage 4 Punkt 2.1.12)
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220110;0110;10;16,07;Zeitdauer bis 10 Minuten für Leistungen der sozialpsychiatrischen Grundversorgung, Krisenintervention einschl. amb. Notfallbehandlung, spezifische Einzelbehandlung/Betreuung, Psychodiagnostik, ohne Videosprechstunde
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220111;0111;20;32,22;Zeitdauer bis 20 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220112;0112;40;64,45;Zeitdauer bis 40 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220113;0113;60;96,66;Zeitdauer bis 60 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220114;0114;90;144,99;Zeitdauer bis 90 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220115;0115;120;192,88;Zeitdauer bis 120 Minuten kinder- und jugendpsychiatrische Abklärung, spezifische Diagnostik, ambulante Notfallbehandlung und Krisenintervention, Einzeltherapie, ohne Videosprechstunde
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220116;0116;180;289,32;Zeitdauer bis 180 Minuten kinder- und jugendpsychiatrische Abklärung, spezifische Diagnostik, ambulante Notfallbehandlung und Krisenintervention, Einzeltherapie, ohne Videosprechstunde
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220117;0117;240;385,76;Zeitdauer bis 240 Minuten kinder- und jugendpsychiatrische Abklärung, spezifische Diagnostik, ambulante Notfallbehandlung und Krisenintervention, Einzeltherapie, ohne Videosprechstunde (Abrechnung nur 1 mal im Krankheitsfall möglich)
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220122;0122;40;18,41;Zeitdauer bis 40 Minuten spezifische Behandlung in der Kleingruppe (bis zu 3 Patienten)
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220123;0123;60;27,62;Zeitdauer bis 60 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220124;0124;90;41,41;Zeitdauer bis 90 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220125;0125;120;55,26;Zeitdauer bis 120 Minuten wie oben (Kleingruppe), (nur mit entsprechender Begründung sind längere Zeiten abrechenbar)
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220132;0132;40;9,19;Zeitdauer bis 40 Minuten spezifische Behandlung in der Großgruppe (mind. 4, max. 8 Patienten)
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220133;0133;60;13,79;Zeitdauer bis 60 Minuten wie oben (Großgruppe)
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220134;0134;90;20,70;Zeitdauer bis 90 Minuten wie oben (Großgruppe)
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220135;0135;120;27,62;Zeitdauer bis 120 Minuten wie oben (Großgruppe), (nur mit entsprechender Begründung sind längere Zeiten abrechenbar)
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220150;0150;10;16,07;bis 10 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220151;0151;20;32,22;bis 20 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220152;0152;40;64,45;bis 40 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220153;0153;60;96,66;bis 60 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220154;0154;90;144,99;bis 90 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220155;0155;120;192,88;bis 120 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220156;0156;180;289,32;bis 180 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220160;0160;10;16,07;bis 10 Minuten Fahrzeit Arzt
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220161;0161;20;32,22;bis 20 Minuten Fahrzeit Arzt
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220162;0162;40;64,45;bis 40 Minuten Fahrzeit Arzt
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220163;0163;60;96,66;bis 60 Minuten Fahrzeit Arzt
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220164;0164;90;144,99;bis 90 Minuten Fahrzeit Arzt
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220165;0165;120;192,88;bis 120 Minuten Fahrzeit Arzt
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220166;0166;180;289,32;bis 180 Minuten Fahrzeit Arzt
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220167;0167;240;385,76;bis 240 Minuten Fahrzeit Arzt
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220170;0170;;179,09;CT-Einzelleistung
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220180;0180;;473,80;NMR-Einzelleistung
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220190;0190;;14,22;je Fall und Quartal für Diagnostik (EKG, EEG, Labor)
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220191;0191;;4,88;Qualitative Stäbchentests (je Substanz/Substanzgruppe) - Amphetamine, Barbiturate, Benzodiazepine, Cannabinoide, Kokain, Methadon, Opiate, u.a. - Je Parameter nur bei substituierten Patienten zusätzlich zur Geb.-Nr. 190 abrechenbar
+Kinder- und Jugendpsychiatrie;Ärztliche Leistungen;35220192;0192;;12,91;Quantitative und semiquantitative Bestimmungen (je Untersuchung) - Amphetamine, Barbiturate, Benzodiazepine, Cannabinoide, Kokain, Methadon, Opiate, u.a. - Ggf. mehrfach pro Quartal nur bei substituierten Patienten zusätzlich zu Geb.-Nr. 190 und 191 abrechenbar, jedoch nur bis zu dreimal bei Untersuchungen aus demselben Körpermaterial; Höchstwert 38,73 EUR; sofern die Leistung nicht im eigenen Labor durchgeführt wird, ist die Überweisung an ein externes Labor möglich
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220210;0210;10;14,39;Zeitdauer bis 10 Minuten für Leistungen der sozialpsychiatrischen Grundversorgung, Krisenintervention einschl. amb. Notfallbehandlung, spezifische Einzelbehandlung/Betreuung, Psychodiagnostik, ohne Videosprechstunde
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220211;0211;20;28,78;Zeitdauer bis 20 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220212;0212;40;57,56;Zeitdauer bis 40 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220213;0213;60;86,34;Zeitdauer bis 60 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220214;0214;90;129,47;Zeitdauer bis 90 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220215;0215;120;172,67;Zeitdauer bis 120 Minuten kinder- u. jugendpsychiatrische Abklärung, spezifische Diagnostik, Einzeltherapie
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220216;0216;180;259,00;Zeitdauer bis 180 Minuten kinder- u. jugendpsychiatrische Abklärung, spezifische Diagnostik, Einzeltherapie
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220222;0222;40;16,44;Zeitdauer bis 40 Minuten spezifische Behandlung in der Kleingruppe (bis zu 3 Patienten)
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220223;0223;60;24,66;Zeitdauer bis 60 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220224;0224;90;37,00;Zeitdauer bis 90 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220225;0225;120;49,34;Zeitdauer bis 120 Minuten wie oben (Kleingruppe), (nur mit entsprechender Begründung sind längere Zeiten abrechenbar)
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220232;0232;40;8,24;Zeitdauer bis 40 Minuten spezifische Behandlung in der Großgruppe (mind. 4, max. 8 Patienten)
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220233;0233;60;12,36;Zeitdauer bis 60 Minuten wie oben (Großgruppe)
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220234;0234;90;18,50;Zeitdauer bis 90 Minuten wie oben (Großgruppe)
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220235;0235;120;24,66;Zeitdauer bis 120 Minuten wie oben (Großgruppe), (nur mit entsprechender Begründung sind längere Zeiten abrechenbar)
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220250;0250;10;14,39;bis 10 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220251;0251;20;28,78;bis 20 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220252;0252;40;57,56;bis 40 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220253;0253;60;86,34;bis 60 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220254;0254;90;129,47;bis 90 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220255;0255;120;172,67;bis 120 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220256;0256;180;259,00;bis 180 Minuten für Leistungen im Rahmen einer Videosprechstunde
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220260;0260;10;14,39;bis zu 10 Minuten Fahrzeit Psychologe und Psychotherapeuten
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220261;0261;20;28,78;bis zu 20 Minuten Fahrzeit Psychologe und Psychotherapeuten
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220262;0262;40;57,56;bis zu 40 Minuten Fahrzeit Psychologe und Psychotherapeuten
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220263;0263;60;86,34;bis zu 60 Minuten Fahrzeit Psychologe und Psychotherapeuten
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220264;0264;90;129,47;bis zu 90 Minuten Fahrzeit Psychologe und Psychotherapeuten
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220265;0265;120;172,67;bis zu 120 Minuten Fahrzeit Psychologe und Psychotherapeuten
+Kinder- und Jugendpsychiatrie;Leistungen von Psychologen und Psychotherapeuten;35220266;0266;180;259,00;bis zu 180 Minuten Fahrzeit Psychologe und Psychotherapeuten
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220310;0310;10;9,32;bis 10 Minuten für Leistungen der sozialpsychiatrischen Grundversorgung, Krisenintervention einschl. Notfallbehandlung, spezifische Einzelbehandlung/Betreuung
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220311;0311;20;18,63;bis 20 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220312;0312;40;37,22;bis 40 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220313;0313;60;55,86;bis 60 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220314;0314;90;83,77;bis 90 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220315;0315;120;111,66;bis 120 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220316;0316;180;167,49;bis 180 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220317;0317;240;223,31;bis 240 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220322;0322;40;10,65;Zeitdauer bis 40 Minuten spezifische Behandlung in der Kleingruppe (bis zu 3 Patienten)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220323;0323;60;15,98;Zeitdauer bis 60 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220324;0324;90;23,95;Zeitdauer bis 90 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220325;0325;120;31,88;Zeitdauer bis 120 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220326;0326;180;46,15;Zeitdauer bis 180 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220327;0327;240;63,75;Zeitdauer bis 240 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220332;0332;40;5,33;Zeitdauer bis 40 Minuten spezifische Behandlung in der Großgruppe (mind. 4, max. 8 Patienten)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220333;0333;60;7,99;Zeitdauer bis 60 Minuten wie oben (Großgruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220334;0334;90;11,99;Zeitdauer bis 90 Minuten wie oben (Großgruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220335;0335;120;15,98;Zeitdauer bis 120 Minuten wie oben (Großgruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220336;0336;180;23,96;Zeitdauer bis 180 Minuten wie oben (Großgruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220337;0337;240;31,95;Zeitdauer bis 240 Minuten wie oben (Großgruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220360;0360;10;9,32;bis zu 10 Minuten Fahrzeit Pflegepersonal
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220361;0361;20;18,63;bis zu 20 Minuten Fahrzeit Pflegepersonal
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220362;0362;40;37,22;bis zu 40 Minuten Fahrzeit Pflegepersonal
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220363;0363;60;55,86;bis zu 60 Minuten Fahrzeit Pflegepersonal
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220364;0364;90;83,77;bis zu 90 Minuten Fahrzeit Pflegepersonal
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220365;0365;120;111,66;bis zu 120 Minuten Fahrzeit Pflegepersonal
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220366;0366;180;167,49;bis zu 180 Minuten Fahrzeit Pflegepersonal
+Kinder- und Jugendpsychiatrie;Leistungen v. Pflegepersonal;35220367;0367;240;223,31;bis zu 240 Minuten Fahrzeit Pflegepersonal
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220411;0411;20;23,90;bis 20 Minuten für Leistungen der sozialpsychiatrischen Grundversorgung, Krisenintervention einschl. Notfallbehandlung, spezifische Einzelbehandlung/Betreuung
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220412;0412;40;47,74;bis 40 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220413;0413;60;71,61;bis 60 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220414;0414;90;107,43;bis 90 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220415;0415;120;143,20;bis 120 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220422;0422;40;13,64;Zeitdauer bis 40 Minuten spezifische Behandlung in der Kleingruppe (bis zu 3 Patienten)
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220423;0423;60;20,46;Zeitdauer bis 60 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220424;0424;90;30,65;Zeitdauer bis 90 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220425;0425;120;40,92;Zeitdauer bis 120 Minuten wie oben (Kleingruppe), (nur mit entsprechender Begründung sind längere Zeiten abrechenbar)
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220461;0461;20;23,90;Fahrtzeit bis 20 Min. im Zusammenhang mit Leistungen v. Sozialpädagogen
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220462;0462;40;47,74;Fahrtzeit bis 40 Min. im Zusammenhang mit Leistungen v. Sozialpädagogen
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220463;0463;60;71,61;Fahrtzeit bis 60 Min. im Zusammenhang mit Leistungen v. Sozialpädagogen
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220464;0464;90;107,43;Fahrtzeit bis 90 Min. im Zusammenhang mit Leistungen v. Sozialpädagogen
+Kinder- und Jugendpsychiatrie;Leistungen v. Sozialpädagogen;35220465;0465;120;143,20;Fahrtzeit bis 120 Min. im Zusammenhang mit Leistung. v. Sozialpädagogen
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220510;0510;10;10,26;bis 10 Minuten für Leistungen der sozialpsychiatrischen Grundversorgung, spezifische Einzelbehandlung/Betreuung
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220511;0511;20;20,52;bis 20 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220512;0512;40;41,09;bis 40 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220513;0513;60;61,59;bis 60 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220514;0514;90;92,41;bis 90 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220515;0515;120;123,21;bis 120 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220516;0516;180;184,76;bis 180 Minuten wie oben
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220522;0522;40;11,69;Zeitdauer bis 40 Minuten spezifische Behandlung in der Kleingruppe (bis zu 3 Patienten)
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220523;0523;60;17,54;Zeitdauer bis 60 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220524;0524;90;26,37;Zeitdauer bis 90 Minuten wie oben (Kleingruppe)
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220525;0525;120;35,19;Zeitdauer bis 120 Minuten wie oben (Kleingruppe), (nur mit entsprechender Begründung sind längere Zeiten abrechenbar)
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220532;0532;40;5,86;Zeitdauer bis 40 Minuten spezifische Behandlung in der Großgruppe (mind. 4, max. 8 Patienten)
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220533;0533;60;8,79;Zeitdauer bis 60 Minuten wie oben (Großgruppe)
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220534;0534;90;13,22;Zeitdauer bis 90 Minuten wie oben (Großgruppe)
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220535;0535;120;17,54;Zeitdauer bis 120 Minuten wie oben (Großgruppe), (nur mit entsprechender Begründung sind längere Zeiten abrechenbar)
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220560;0560;10;10,26;bis zu 10 Minuten Fahrzeit Ergotherapeut
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220561;0561;20;20,52;bis zu 20 Minuten Fahrzeit Ergotherapeut
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220562;0562;40;41,09;bis zu 40 Minuten Fahrzeit Ergotherapeut
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220563;0563;60;61,59;bis zu 60 Minuten Fahrzeit Ergotherapeut
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220564;0564;90;92,41;bis zu 90 Minuten Fahrzeit Ergotherapeut
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220565;0565;120;123,21;bis zu 120 Minuten Fahrzeit Ergotherapeut
+Kinder- und Jugendpsychiatrie;Leistungen von Ergotherapeuten;35220566;0566;180;184,76;bis zu 180 Minuten Fahrzeit Ergotherapeut
+Kinder- und Jugendpsychiatrie;Team-/Fallbesprechung;35220040;0040;10;61,98;Zeitdauer mindestens 10 Minuten multiprofessionelle Team-/Fallbesprechung durch Standardgruppe (Arzt, Psychologe, Sozialpädagoge, Sprachtherapeut, sonstige nichtärztliche Therapeuten) je Patient max. 4mal im Quartal. Mindestteilnehmer: 5, Ausnahme: 4 Teilnehmer. Daneben ist die Ziffer 0048 abrechenbar, wenn durch Addition der Zeiteinheiten max. 40 Minuten zusammenkommen
+Kinder- und Jugendpsychiatrie;Team-/Fallbesprechung;35220048;0048;20;124,04;Zeitdauer mindestens 20 Minuten multiprofessionelle Team-/Fallbesprechung durch Standardgruppe (Arzt, Psychologe, Sozialpädagoge, Sprachtherapeut, sonstige nichtärztliche Therapeuten) je Patient zweimal im Quartal. Mindestteilnehmer: 5, Ausnahme: 4 Teilnehmer
+Kinder- und Jugendpsychiatrie;Fallkonferenz;35220059;0059;60;371,87;Zeitdauer mindestens 60 Minuten multiprofessionelle Fallkonferenz durch Standardgruppe (Arzt, Psychologe, Sozialpädagoge, Sprachtherapeut, sonstige nichtärztliche Therapeuten) je Patient einmal im Jahr. Mindestteilnehmer: 5, Ausnahme: 4 Teilnehmer
