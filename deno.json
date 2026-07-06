@@ -1,10 +1,10 @@
 {
   "tasks": {
     "dev": "deno run --allow-net --allow-read main.ts",
-    "desktop:mac": "deno desktop --output dist/macos/PIA-Dashboard.app main.ts",
-    "desktop:mac:dmg": "deno desktop --output dist/macos/PIA-Dashboard.dmg main.ts",
-    "desktop:windows": "deno desktop --target x86_64-pc-windows-msvc --output dist/windows/PIA-Dashboard.msi main.ts",
-    "desktop:all": "deno desktop --all-targets main.ts"
+    "desktop:mac": "deno desktop --include index.html --include css --include js --include pia-verträge --output dist/macos/PIA-Dashboard.app main.ts",
+    "desktop:mac:dmg": "deno desktop --include index.html --include css --include js --include pia-verträge --output dist/macos/PIA-Dashboard.dmg main.ts",
+    "desktop:windows": "deno desktop --include index.html --include css --include js --include pia-verträge --target x86_64-pc-windows-msvc --output dist/windows/PIA-Dashboard.msi main.ts",
+    "desktop:all": "deno desktop --include index.html --include css --include js --include pia-verträge --all-targets main.ts"
   },
   "desktop": {
     "app": {

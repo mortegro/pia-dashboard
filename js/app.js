@@ -14,7 +14,9 @@
     granularity: "week",
     periods: [],
     periodIndex: 0,
-    tarifMap: new Map(),   // gebNr (int) -> { verguetung, beschreibung, kategorie, minuten }
+    tarifMode: "periods",  // "periods" (automatic, by Leistungsdatum) or "single" (manual override)
+    tarifMap: new Map(),   // gebNr (int) -> { verguetung, beschreibung, kategorie, minuten }; used when tarifMode === "single"
+    tarifPeriods: [],      // [{ start: Date, end: Date, label, map }]; used when tarifMode === "periods"
     tarifLabel: "",
     detail: {
       amountFrom: null,
@@ -34,6 +36,10 @@
   function dayOnly(d) {
     const r = new Date(d.getFullYear(), d.getMonth(), d.getDate());
     return r;
+  }
+  function parseIsoDateLocal(s) {
+    const [y, m, d] = s.split("-").map(Number);
+    return new Date(y, m - 1, d);
   }
   function startOfWeek(d) {
     const s = dayOnly(d);
@@ -200,39 +206,119 @@
     return map;
   }
 
-  function lookupTarif(leistungCode) {
+  function lookupInMap(map, leistungCode) {
     const digits = String(leistungCode).replace(/^[^0-9]+/, "");
     if (!digits) return null;
     const n = parseInt(digits, 10);
     if (isNaN(n)) return null;
-    return state.tarifMap.get(n) || null;
+    return map.get(n) || null;
   }
 
-  function applyTarif(tarifMap, label) {
+  function findTarifPeriod(date) {
+    return state.tarifPeriods.find((p) => date >= p.start && date <= p.end) || null;
+  }
+
+  // returns { tarif, missing } where missing is null, "period" (no Vergütungstabelle
+  // covers this Leistungsdatum) or "code" (table found but Leistungscode not in it)
+  function resolveTarif(leistungCode, date) {
+    if (state.tarifMode === "single") {
+      const tarif = lookupInMap(state.tarifMap, leistungCode);
+      return { tarif, missing: tarif ? null : "code" };
+    }
+    const period = findTarifPeriod(date);
+    if (!period) return { tarif: null, missing: "period" };
+    const tarif = lookupInMap(period.map, leistungCode);
+    return { tarif, missing: tarif ? null : "code" };
+  }
+
+  function applySingleTarif(tarifMap, label) {
+    state.tarifMode = "single";
     state.tarifMap = tarifMap;
     state.tarifLabel = label;
     el("tarifLabel").textContent = label;
+    updateTarifStatus();
+  }
 
+  function applyTarifPeriods(periods) {
+    state.tarifMode = "periods";
+    state.tarifPeriods = periods;
+    state.tarifLabel = periods
+      .map((p) => `${fmtDayFull(p.start)}–${fmtDayFull(p.end)}`)
+      .join(" · ");
+    el("tarifLabel").textContent = state.tarifLabel || "Keine Vergütungstabellen gefunden";
+    updateTarifStatus();
+  }
+
+  function updateTarifStatus() {
     const warnBox = el("tarifWarning");
-    if (state.entries.length) {
-      const unmatched = new Set();
-      state.entries.forEach((e) => {
-        if (!lookupTarif(e.leistung)) unmatched.add(e.leistung);
-      });
-      if (unmatched.size) {
-        warnBox.textContent =
-          `Achtung: ${unmatched.size} Leistungscode(s) ohne Zuordnung in der Vergütungstabelle (Vergütung = 0 €): ` +
-          Array.from(unmatched).sort().join(", ");
-        warnBox.classList.remove("hidden");
-      } else {
-        warnBox.classList.add("hidden");
-        warnBox.textContent = "";
-      }
+    const errorBox = el("tarifPeriodError");
+
+    if (!state.entries.length) {
+      warnBox.classList.add("hidden");
+      warnBox.textContent = "";
+      errorBox.classList.add("hidden");
+      errorBox.textContent = "";
+      return;
+    }
+
+    const unmatchedCodes = new Set();
+    const missingPeriodDates = new Set();
+    state.entries.forEach((e) => {
+      const { tarif, missing } = resolveTarif(e.leistung, e.date);
+      if (tarif) return;
+      if (missing === "period") missingPeriodDates.add(fmtDayFull(e.date));
+      else unmatchedCodes.add(e.leistung);
+    });
+
+    if (missingPeriodDates.size) {
+      const dates = Array.from(missingPeriodDates).sort();
+      errorBox.textContent =
+        `Fehler: Für ${missingPeriodDates.size} Leistungsdatum/-daten liegt keine Vergütungstabelle vor ` +
+        `(Vergütung = 0 €): ${dates.slice(0, 20).join(", ")}${dates.length > 20 ? " …" : ""}`;
+      errorBox.classList.remove("hidden");
+    } else {
+      errorBox.classList.add("hidden");
+      errorBox.textContent = "";
+    }
+
+    if (unmatchedCodes.size) {
+      warnBox.textContent =
+        `Achtung: ${unmatchedCodes.size} Leistungscode(s) ohne Zuordnung in der Vergütungstabelle (Vergütung = 0 €): ` +
+        Array.from(unmatchedCodes).sort().join(", ");
+      warnBox.classList.remove("hidden");
     } else {
       warnBox.classList.add("hidden");
       warnBox.textContent = "";
     }
+
     renderDetailTable();
+  }
+
+  async function loadDefaultTarifPeriods() {
+    try {
+      const res = await fetch("/api/tarif-periods");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const raw = await res.json();
+      if (!Array.isArray(raw) || !raw.length) {
+        throw new Error("Keine Vergütungstabellen im Ordner 'pia-verträge' gefunden.");
+      }
+      const periods = raw
+        .map((p) => {
+          const end = parseIsoDateLocal(p.end);
+          end.setHours(23, 59, 59, 999);
+          return {
+            start: parseIsoDateLocal(p.start),
+            end,
+            label: p.label,
+            map: parseTarifCSV(p.csvText),
+          };
+        })
+        .sort((a, b) => a.start - b.start);
+      applyTarifPeriods(periods);
+    } catch (err) {
+      console.error("Vergütungstabellen konnten nicht geladen werden:", err);
+      applyTarifPeriods([]);
+    }
   }
 
   // ---------- rendering ----------
@@ -247,10 +333,17 @@
       .filter((e) => state.selectedEmployees.has(e.employee))
       .filter((e) => !period || (e.date >= period.start && e.date <= period.end))
       .map((e) => {
-        const tarif = lookupTarif(e.leistung);
+        const { tarif, missing } = resolveTarif(e.leistung, e.date);
         const price = tarif ? tarif.verguetung : 0;
         const amount = price * e.menge;
-        return { ...e, price, amount, tarifFound: !!tarif, beschreibung: tarif ? tarif.beschreibung : "" };
+        return {
+          ...e,
+          price,
+          amount,
+          tarifFound: !!tarif,
+          tarifMissing: missing,
+          beschreibung: tarif ? tarif.beschreibung : ""
+        };
       })
       .filter((e) => d.amountFrom == null || e.amount >= d.amountFrom)
       .filter((e) => d.amountTo == null || e.amount <= d.amountTo)
@@ -312,8 +405,13 @@
     pageRows.forEach((e) => {
       const tr = document.createElement("tr");
       if (!e.tarifFound) {
-        tr.classList.add("row-warn");
-        tr.title = "Kein Tarif fuer diesen Leistungscode gefunden (Vergütung = 0 €)";
+        if (e.tarifMissing === "period") {
+          tr.classList.add("row-error");
+          tr.title = "Keine Vergütungstabelle für dieses Leistungsdatum vorhanden (Vergütung = 0 €)";
+        } else {
+          tr.classList.add("row-warn");
+          tr.title = "Kein Tarif fuer diesen Leistungscode gefunden (Vergütung = 0 €)";
+        }
       }
       const cells = [
         fmtDayFull(e.date),
@@ -399,7 +497,7 @@
 
     const stats = new Map(); // employee -> { count, amount }
     filtered.forEach((e) => {
-      const tarif = lookupTarif(e.leistung);
+      const { tarif } = resolveTarif(e.leistung, e.date);
       const price = tarif ? tarif.verguetung : 0;
       const s = stats.get(e.employee) || { count: 0, amount: 0 };
       s.count += 1;
@@ -479,7 +577,7 @@
     el("detailAmountTo").value = "";
     el("detailSearch").value = "";
 
-    applyTarif(state.tarifMap, state.tarifLabel);
+    updateTarifStatus();
     renderEmployeeList();
     renderEmployeeCount();
     renderDashboard();
@@ -545,7 +643,7 @@
     reader.onload = (evt) => {
       try {
         const map = parseTarifCSV(evt.target.result);
-        applyTarif(map, file.name);
+        applySingleTarif(map, file.name);
         el("tarifStatus").textContent = `${map.size} Leistungen geladen`;
       } catch (err) {
         console.error(err);
@@ -562,16 +660,7 @@
 
   // ---------- wiring ----------
   document.addEventListener("DOMContentLoaded", () => {
-    if (window.DEFAULT_TARIF) {
-      try {
-        const map = parseTarifCSV(window.DEFAULT_TARIF.csvText);
-        state.tarifMap = map;
-        state.tarifLabel = window.DEFAULT_TARIF.label;
-        el("tarifLabel").textContent = state.tarifLabel;
-      } catch (err) {
-        console.error("Default-Vergütungstabelle konnte nicht geladen werden:", err);
-      }
-    }
+    loadDefaultTarifPeriods();
 
     el("fileInput").addEventListener("change", (e) => {
       loadFile(e.target.files[0]);

@@ -396,6 +396,16 @@ body {
   font-size: 13px;
 }
 
+.tarif-error {
+  background: #fdecea;
+  border: 1px solid #f0a3a3;
+  color: #8a1f1f;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 18px;
+  font-size: 13px;
+}
+
 .summary-row {
   display: flex;
   gap: 14px;
@@ -484,6 +494,14 @@ tr.row-warn {
 
 tr.row-warn td:first-child {
   box-shadow: inset 3px 0 0 #f0c36d;
+}
+
+tr.row-error {
+  background: #fdecea;
+}
+
+tr.row-error td:first-child {
+  box-shadow: inset 3px 0 0 #d9534f;
 }
 
 .detail-footer {
