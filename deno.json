@@ -1,0 +1,20 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-net --allow-read main.ts",
+    "desktop:mac": "deno desktop --output dist/macos/PIA-Dashboard.app main.ts",
+    "desktop:mac:dmg": "deno desktop --output dist/macos/PIA-Dashboard.dmg main.ts",
+    "desktop:windows": "deno desktop --target x86_64-pc-windows-msvc --output dist/windows/PIA-Dashboard.msi main.ts",
+    "desktop:all": "deno desktop --all-targets main.ts"
+  },
+  "desktop": {
+    "app": {
+      "name": "PIA Dashboard",
+      "identifier": "com.data2impact.pia-dashboard"
+    },
+    "backend": "webview",
+    "output": {
+      "macos": "./dist/macos/PIA-Dashboard.app",
+      "windows": "./dist/windows/PIA-Dashboard"
+    }
+  }
+}
