@@ -61,28 +61,6 @@ body {
 
 .icon-btn:hover { background: var(--accent-light); }
 
-.settings-panel {
-  position: absolute;
-  top: 44px;
-  right: 0;
-  z-index: 20;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  padding: 14px;
-  width: 320px;
-}
-
-.settings-title {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  color: var(--muted);
-  margin-bottom: 10px;
-}
-
 .file-btn {
   position: relative;
   display: inline-block;
@@ -351,38 +329,6 @@ body {
   gap: 8px;
   padding: 4px 2px;
   font-size: 13px;
-  cursor: pointer;
-}
-
-.tarif-row {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 13px;
-}
-
-.tarif-label {
-  font-weight: 600;
-}
-
-.tarif-file-btn {
-  position: relative;
-  display: inline-block;
-  padding: 6px 12px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--text);
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 12px;
-  user-select: none;
-}
-
-.tarif-file-btn input {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
   cursor: pointer;
 }
 

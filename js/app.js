@@ -14,9 +14,7 @@
     granularity: "week",
     periods: [],
     periodIndex: 0,
-    tarifMode: "periods",  // "periods" (automatic, by Leistungsdatum) or "single" (manual override)
-    tarifMap: new Map(),   // gebNr (int) -> { verguetung, beschreibung, kategorie, minuten }; used when tarifMode === "single"
-    tarifPeriods: [],      // [{ start: Date, end: Date, label, map }]; used when tarifMode === "periods"
+    tarifPeriods: [],      // [{ start: Date, end: Date, label, map }], selected automatically by Leistungsdatum
     tarifLabel: "",
     detail: {
       amountFrom: null,
@@ -218,34 +216,19 @@
     return state.tarifPeriods.find((p) => date >= p.start && date <= p.end) || null;
   }
 
-  // returns { tarif, missing } where missing is null, "period" (no Vergütungstabelle
-  // covers this Leistungsdatum) or "code" (table found but Leistungscode not in it)
+  // returns { tarif, missing, periodLabel } where missing is null, "period" (no
+  // Vergütungstabelle covers this Leistungsdatum) or "code" (table found but
+  // Leistungscode not in it); periodLabel names the table that was checked
   function resolveTarif(leistungCode, date) {
-    if (state.tarifMode === "single") {
-      const tarif = lookupInMap(state.tarifMap, leistungCode);
-      return { tarif, missing: tarif ? null : "code" };
-    }
     const period = findTarifPeriod(date);
-    if (!period) return { tarif: null, missing: "period" };
+    if (!period) return { tarif: null, missing: "period", periodLabel: null };
     const tarif = lookupInMap(period.map, leistungCode);
-    return { tarif, missing: tarif ? null : "code" };
-  }
-
-  function applySingleTarif(tarifMap, label) {
-    state.tarifMode = "single";
-    state.tarifMap = tarifMap;
-    state.tarifLabel = label;
-    el("tarifLabel").textContent = label;
-    updateTarifStatus();
+    return { tarif, missing: tarif ? null : "code", periodLabel: period.label };
   }
 
   function applyTarifPeriods(periods) {
-    state.tarifMode = "periods";
     state.tarifPeriods = periods;
-    state.tarifLabel = periods
-      .map((p) => `${fmtDayFull(p.start)}–${fmtDayFull(p.end)}`)
-      .join(" · ");
-    el("tarifLabel").textContent = state.tarifLabel || "Keine Vergütungstabellen gefunden";
+    state.tarifLabel = periods.map((p) => p.label).join(" · ");
     updateTarifStatus();
   }
 
@@ -304,12 +287,13 @@
       }
       const periods = raw
         .map((p) => {
+          const start = parseIsoDateLocal(p.start);
           const end = parseIsoDateLocal(p.end);
           end.setHours(23, 59, 59, 999);
           return {
-            start: parseIsoDateLocal(p.start),
+            start,
             end,
-            label: p.label,
+            label: `${fmtDayFull(start)}–${fmtDayFull(end)}`,
             map: parseTarifCSV(p.csvText),
           };
         })
@@ -333,7 +317,7 @@
       .filter((e) => state.selectedEmployees.has(e.employee))
       .filter((e) => !period || (e.date >= period.start && e.date <= period.end))
       .map((e) => {
-        const { tarif, missing } = resolveTarif(e.leistung, e.date);
+        const { tarif, missing, periodLabel } = resolveTarif(e.leistung, e.date);
         const price = tarif ? tarif.verguetung : 0;
         const amount = price * e.menge;
         return {
@@ -342,6 +326,7 @@
           amount,
           tarifFound: !!tarif,
           tarifMissing: missing,
+          tarifPeriodLabel: periodLabel,
           beschreibung: tarif ? tarif.beschreibung : ""
         };
       })
@@ -404,14 +389,14 @@
     tbody.innerHTML = "";
     pageRows.forEach((e) => {
       const tr = document.createElement("tr");
-      if (!e.tarifFound) {
-        if (e.tarifMissing === "period") {
-          tr.classList.add("row-error");
-          tr.title = "Keine Vergütungstabelle für dieses Leistungsdatum vorhanden (Vergütung = 0 €)";
-        } else {
-          tr.classList.add("row-warn");
-          tr.title = "Kein Tarif fuer diesen Leistungscode gefunden (Vergütung = 0 €)";
-        }
+      if (e.tarifFound) {
+        tr.title = `Vergütungstabelle: ${e.tarifPeriodLabel}`;
+      } else if (e.tarifMissing === "period") {
+        tr.classList.add("row-error");
+        tr.title = "Keine Vergütungstabelle für dieses Leistungsdatum vorhanden (Vergütung = 0 €)";
+      } else {
+        tr.classList.add("row-warn");
+        tr.title = `Vergütungstabelle: ${e.tarifPeriodLabel} — kein Tarif für diesen Leistungscode gefunden (Vergütung = 0 €)`;
       }
       const cells = [
         fmtDayFull(e.date),
@@ -636,28 +621,6 @@
     reader.readAsArrayBuffer(file);
   }
 
-  function loadTarifFile(file) {
-    if (!file) return;
-    el("tarifStatus").textContent = "Lade …";
-    const reader = new FileReader();
-    reader.onload = (evt) => {
-      try {
-        const map = parseTarifCSV(evt.target.result);
-        applySingleTarif(map, file.name);
-        el("tarifStatus").textContent = `${map.size} Leistungen geladen`;
-      } catch (err) {
-        console.error(err);
-        el("tarifStatus").textContent = "";
-        alert("Fehler beim Einlesen der Vergütungstabelle:\n" + err.message);
-      }
-    };
-    reader.onerror = () => {
-      el("tarifStatus").textContent = "";
-      alert("Vergütungstabelle konnte nicht gelesen werden.");
-    };
-    reader.readAsText(file, "utf-8");
-  }
-
   // ---------- wiring ----------
   document.addEventListener("DOMContentLoaded", () => {
     loadDefaultTarifPeriods();
@@ -667,21 +630,6 @@
     });
     el("emptyFileInput").addEventListener("change", (e) => {
       loadFile(e.target.files[0]);
-    });
-
-    el("tarifInput").addEventListener("change", (e) => {
-      loadTarifFile(e.target.files[0]);
-    });
-
-    el("settingsToggle").addEventListener("click", () => {
-      el("settingsPanel").classList.toggle("hidden");
-    });
-    document.addEventListener("click", (e) => {
-      const panel = el("settingsPanel");
-      const toggle = el("settingsToggle");
-      if (!panel.classList.contains("hidden") && !panel.contains(e.target) && !toggle.contains(e.target)) {
-        panel.classList.add("hidden");
-      }
     });
 
     document.getElementById("granularity").addEventListener("click", (e) => {
