@@ -1,0 +1,4 @@
+services:
+  pia-dashboard:
+    ports:
+      - "6002:8000"

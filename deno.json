@@ -1,10 +1,18 @@
 {
   "tasks": {
     "dev": "deno run --allow-net --allow-read main.ts",
-    "desktop:mac": "deno desktop --include index.html --include css --include js --include pia-verträge --output dist/macos/PIA-Dashboard.app main.ts",
-    "desktop:mac:dmg": "deno desktop --include index.html --include css --include js --include pia-verträge --output dist/macos/PIA-Dashboard.dmg main.ts",
-    "desktop:windows": "deno desktop --include index.html --include css --include js --include pia-verträge --target x86_64-pc-windows-msvc --output dist/windows/PIA-Dashboard.msi main.ts",
-    "desktop:all": "deno desktop --include index.html --include css --include js --include pia-verträge --all-targets main.ts"
+    "fmt": "deno fmt main.ts js/app.js",
+    "lint": "deno lint main.ts js/app.js",
+    "desktop:mac": "deno desktop --include index.html --include css --include js --include vendor --include pia-verträge --output dist/macos/PIA-Dashboard.app main.ts",
+    "desktop:mac:dmg": "deno desktop --include index.html --include css --include js --include vendor --include pia-verträge --output dist/macos/PIA-Dashboard.dmg main.ts",
+    "desktop:windows": "deno desktop --include index.html --include css --include js --include vendor --include pia-verträge --target x86_64-pc-windows-msvc --output dist/windows/PIA-Dashboard.msi main.ts",
+    "desktop:all": "deno desktop --include index.html --include css --include js --include vendor --include pia-verträge --all-targets main.ts"
+  },
+  "fmt": {
+    "exclude": ["vendor/", "dist/", "pia-verträge/"]
+  },
+  "lint": {
+    "exclude": ["vendor/", "dist/", "pia-verträge/"]
   },
   "desktop": {
     "app": {

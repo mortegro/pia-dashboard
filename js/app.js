@@ -59,21 +59,42 @@
       floor: (d) => startOfWeek(d),
       add: (d, n) => { const r = new Date(d); r.setDate(r.getDate() + 7 * n); return r; },
       end: (start) => { const e = new Date(start); e.setDate(e.getDate() + 6); e.setHours(23, 59, 59, 999); return e; },
-      label: (start, end) => `KW ${isoWeekNumber(start)} · ${fmtDay(start)}–${fmtDay(end)}${end.getFullYear()}`
+      label: (start, end) => `KW ${isoWeekNumber(start)} · ${fmtDay(start)}–${fmtDay(end)}${end.getFullYear()}`,
+      short: (start) => `KW ${isoWeekNumber(start)}`
     },
     month: {
       floor: (d) => new Date(d.getFullYear(), d.getMonth(), 1),
       add: (d, n) => new Date(d.getFullYear(), d.getMonth() + n, 1),
       end: (start) => new Date(start.getFullYear(), start.getMonth() + 1, 0, 23, 59, 59, 999),
-      label: (start) => `${MONTHS[start.getMonth()]} ${start.getFullYear()}`
+      label: (start) => `${MONTHS[start.getMonth()]} ${start.getFullYear()}`,
+      short: (start) => MONTHS[start.getMonth()].slice(0, 3)
     },
     quarter: {
       floor: (d) => { const q = Math.floor(d.getMonth() / 3); return new Date(d.getFullYear(), q * 3, 1); },
       add: (d, n) => { const q = Math.floor(d.getMonth() / 3); return new Date(d.getFullYear(), (q + n) * 3, 1); },
       end: (start) => new Date(start.getFullYear(), start.getMonth() + 3, 0, 23, 59, 59, 999),
-      label: (start) => `Q${Math.floor(start.getMonth() / 3) + 1} ${start.getFullYear()}`
+      label: (start) => `Q${Math.floor(start.getMonth() / 3) + 1} ${start.getFullYear()}`,
+      short: (start) => `Q${Math.floor(start.getMonth() / 3) + 1}`
+    },
+    year: {
+      floor: (d) => new Date(d.getFullYear(), 0, 1),
+      add: (d, n) => new Date(d.getFullYear() + n, 0, 1),
+      end: (start) => new Date(start.getFullYear(), 11, 31, 23, 59, 59, 999),
+      label: (start) => `${start.getFullYear()}`,
+      short: (start) => `${start.getFullYear()}`
     }
   };
+
+  // maps the main Zeitraum granularity to the bar unit used in the "Verlauf" chart tab
+  const CHART_SUBGRAN = { month: "week", quarter: "month", year: "month" };
+  const CHART_COLORS = [
+    "#0d6efd", "#6610f2", "#d63384", "#fd7e14", "#198754",
+    "#20c997", "#0dcaf0", "#6f42c1", "#dc3545", "#ffc107"
+  ];
+  function colorForEmployee(emp) {
+    const idx = state.employees.indexOf(emp);
+    return CHART_COLORS[(idx < 0 ? 0 : idx) % CHART_COLORS.length];
+  }
 
   function buildPeriods(gran, minDate, maxDate) {
     const g = GRAN[gran];
@@ -392,10 +413,10 @@
       if (e.tarifFound) {
         tr.title = `Vergütungstabelle: ${e.tarifPeriodLabel}`;
       } else if (e.tarifMissing === "period") {
-        tr.classList.add("row-error");
+        tr.classList.add("table-danger");
         tr.title = "Keine Vergütungstabelle für dieses Leistungsdatum vorhanden (Vergütung = 0 €)";
       } else {
-        tr.classList.add("row-warn");
+        tr.classList.add("table-warning");
         tr.title = `Vergütungstabelle: ${e.tarifPeriodLabel} — kein Tarif für diesen Leistungscode gefunden (Vergütung = 0 €)`;
       }
       const cells = [
@@ -427,10 +448,13 @@
   function renderEmployeeList() {
     const list = el("employeeList");
     list.innerHTML = "";
-    state.employees.forEach((emp) => {
-      const label = document.createElement("label");
+    state.employees.forEach((emp, i) => {
+      const wrap = document.createElement("div");
+      wrap.className = "form-check";
       const cb = document.createElement("input");
       cb.type = "checkbox";
+      cb.className = "form-check-input";
+      cb.id = `emp-cb-${i}`;
       cb.checked = state.selectedEmployees.has(emp);
       cb.addEventListener("change", () => {
         if (cb.checked) state.selectedEmployees.add(emp);
@@ -439,10 +463,15 @@
         state.detail.page = 0;
         renderDashboard();
         renderDetailTable();
+        renderChartView();
       });
-      label.appendChild(cb);
-      label.appendChild(document.createTextNode(emp));
-      list.appendChild(label);
+      const label = document.createElement("label");
+      label.className = "form-check-label small";
+      label.htmlFor = cb.id;
+      label.textContent = emp;
+      wrap.appendChild(cb);
+      wrap.appendChild(label);
+      list.appendChild(wrap);
     });
   }
 
@@ -497,12 +526,16 @@
     const activeEmployees = rows.length;
     const avg = activeEmployees ? (total / activeEmployees).toFixed(1) : "0";
 
-    el("summaryRow").innerHTML = `
-      <div class="stat-card"><div class="value">${total}</div><div class="label">Leistungen im Zeitraum</div></div>
-      <div class="stat-card"><div class="value">${fmtEuro(totalAmount)}</div><div class="label">Vergütung im Zeitraum</div></div>
-      <div class="stat-card"><div class="value">${activeEmployees}</div><div class="label">Aktive Mitarbeiter</div></div>
-      <div class="stat-card"><div class="value">${avg}</div><div class="label">Ø Leistungen / Mitarbeiter</div></div>
-    `;
+    const statCard = (value, label) => `
+      <div class="col"><div class="card h-100"><div class="card-body">
+        <div class="fs-4 fw-bold">${value}</div>
+        <div class="small text-secondary">${label}</div>
+      </div></div></div>`;
+    el("summaryRow").innerHTML =
+      statCard(total, "Leistungen im Zeitraum") +
+      statCard(fmtEuro(totalAmount), "Vergütung im Zeitraum") +
+      statCard(activeEmployees, "Aktive Mitarbeiter") +
+      statCard(avg, "Ø Leistungen / Mitarbeiter");
 
     if (!rows.length) {
       tableEmptyEl.classList.remove("hidden");
@@ -522,9 +555,10 @@
       tdAmount.textContent = fmtEuro(s.amount);
       const tdBar = document.createElement("td");
       const track = document.createElement("div");
-      track.className = "mini-bar-track";
+      track.className = "progress";
+      track.style.height = "8px";
       const fill = document.createElement("div");
-      fill.className = "mini-bar-fill";
+      fill.className = "progress-bar";
       fill.style.width = `${maxAmount ? (s.amount / maxAmount) * 100 : 0}%`;
       track.appendChild(fill);
       tdBar.appendChild(track);
@@ -541,6 +575,98 @@
 
   function fmtEuro(v) {
     return v.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+  }
+
+  // ---------- "Verlauf" chart (stacked bars per week/month within the selected period) ----------
+  const CHART_BAR_HEIGHT = 220;
+
+  function renderChartView() {
+    const container = el("chartRow");
+    const legend = el("chartLegend");
+    const unsupportedEl = el("chartUnsupported");
+    const emptyEl = el("chartEmpty");
+    container.innerHTML = "";
+    legend.innerHTML = "";
+    unsupportedEl.classList.add("hidden");
+    emptyEl.classList.add("hidden");
+
+    const period = state.periods[state.periodIndex];
+    const subGran = CHART_SUBGRAN[state.granularity];
+    if (!period || !subGran) {
+      unsupportedEl.textContent =
+        "Der Verlauf ist für die Wochenansicht nicht verfügbar – bitte Monat, Quartal oder Jahr auswählen.";
+      unsupportedEl.classList.remove("hidden");
+      return;
+    }
+
+    const bars = buildPeriods(subGran, period.start, period.end).map((sp) => {
+      const perEmployee = new Map();
+      state.entries.forEach((e) => {
+        if (!state.selectedEmployees.has(e.employee)) return;
+        if (e.date < sp.start || e.date > sp.end) return;
+        const { tarif } = resolveTarif(e.leistung, e.date);
+        const price = tarif ? tarif.verguetung : 0;
+        perEmployee.set(e.employee, (perEmployee.get(e.employee) || 0) + price * e.menge);
+      });
+      const total = Array.from(perEmployee.values()).reduce((a, b) => a + b, 0);
+      return { period: sp, perEmployee, total };
+    });
+
+    const maxTotal = bars.reduce((m, b) => Math.max(m, b.total), 0);
+    if (!maxTotal) {
+      emptyEl.classList.remove("hidden");
+      return;
+    }
+
+    const presentEmployees = new Set();
+
+    bars.forEach((b) => {
+      const col = document.createElement("div");
+      col.className = "chart-col";
+
+      const totalLabel = document.createElement("div");
+      totalLabel.className = "chart-total small text-secondary";
+      totalLabel.textContent = b.total ? fmtEuro(b.total) : "";
+
+      const bar = document.createElement("div");
+      bar.className = "chart-bar";
+      bar.style.height = `${CHART_BAR_HEIGHT}px`;
+
+      Array.from(b.perEmployee.entries())
+        .filter(([, amount]) => amount > 0)
+        .sort((x, y) => x[0].localeCompare(y[0]))
+        .forEach(([emp, amount]) => {
+          presentEmployees.add(emp);
+          const seg = document.createElement("div");
+          seg.className = "chart-segment";
+          seg.style.height = `${(amount / maxTotal) * CHART_BAR_HEIGHT}px`;
+          seg.style.background = colorForEmployee(emp);
+          seg.title = `${emp}: ${fmtEuro(amount)}`;
+          bar.appendChild(seg);
+        });
+
+      const axisLabel = document.createElement("div");
+      axisLabel.className = "chart-axis-label small text-secondary";
+      axisLabel.textContent = GRAN[subGran].short(b.period.start, b.period.end);
+
+      col.appendChild(totalLabel);
+      col.appendChild(bar);
+      col.appendChild(axisLabel);
+      container.appendChild(col);
+    });
+
+    Array.from(presentEmployees)
+      .sort()
+      .forEach((emp) => {
+        const item = document.createElement("div");
+        item.className = "d-flex align-items-center gap-2 small";
+        const swatch = document.createElement("span");
+        swatch.className = "chart-swatch";
+        swatch.style.background = colorForEmployee(emp);
+        item.appendChild(swatch);
+        item.appendChild(document.createTextNode(emp));
+        legend.appendChild(item);
+      });
   }
 
   function initFromEntries(entries) {
@@ -566,6 +692,7 @@
     renderEmployeeList();
     renderEmployeeCount();
     renderDashboard();
+    renderChartView();
 
     el("emptyState").classList.add("hidden");
     el("loadedContent").classList.remove("hidden");
@@ -590,6 +717,7 @@
     state.detail.page = 0;
     renderDashboard();
     renderDetailTable();
+    renderChartView();
   }
 
   // ---------- file loading ----------
@@ -647,6 +775,7 @@
         state.detail.page = 0;
         renderDashboard();
         renderDetailTable();
+        renderChartView();
       }
     });
     el("nextPeriod").addEventListener("click", () => {
@@ -655,6 +784,7 @@
         state.detail.page = 0;
         renderDashboard();
         renderDetailTable();
+        renderChartView();
       }
     });
 
@@ -665,6 +795,7 @@
       state.detail.page = 0;
       renderDashboard();
       renderDetailTable();
+      renderChartView();
     });
     el("selectNone").addEventListener("click", () => {
       state.selectedEmployees = new Set();
@@ -673,6 +804,7 @@
       state.detail.page = 0;
       renderDashboard();
       renderDetailTable();
+      renderChartView();
     });
 
     // right-side filter drawer (Zeitraum & Mitarbeiter), shared by both views
@@ -690,10 +822,12 @@
       if (!btn) return;
       document.querySelectorAll("#viewTabs button").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
-      const isDetail = btn.dataset.view === "detail";
-      el("overviewView").classList.toggle("hidden", isDetail);
-      el("detailView").classList.toggle("hidden", !isDetail);
-      if (isDetail) renderDetailTable();
+      const view = btn.dataset.view;
+      el("overviewView").classList.toggle("hidden", view !== "overview");
+      el("detailView").classList.toggle("hidden", view !== "detail");
+      el("chartView").classList.toggle("hidden", view !== "chart");
+      if (view === "detail") renderDetailTable();
+      if (view === "chart") renderChartView();
     });
 
     // detail amount / search filters
