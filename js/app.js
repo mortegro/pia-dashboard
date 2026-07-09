@@ -5,6 +5,7 @@
     "Januar", "Februar", "März", "April", "Mai", "Juni",
     "Juli", "August", "September", "Oktober", "November", "Dezember"
   ];
+  const WEEKDAYS = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
 
   // ---------- state ----------
   const state = {
@@ -55,6 +56,13 @@
   }
 
   const GRAN = {
+    day: {
+      floor: (d) => dayOnly(d),
+      add: (d, n) => { const r = dayOnly(d); r.setDate(r.getDate() + n); return r; },
+      end: (start) => new Date(start.getFullYear(), start.getMonth(), start.getDate(), 23, 59, 59, 999),
+      label: (start) => `${WEEKDAYS[start.getDay()]}, ${fmtDayFull(start)}`,
+      short: (start) => `${WEEKDAYS[start.getDay()]} ${fmtDay(start)}`
+    },
     week: {
       floor: (d) => startOfWeek(d),
       add: (d, n) => { const r = new Date(d); r.setDate(r.getDate() + 7 * n); return r; },
@@ -86,7 +94,7 @@
   };
 
   // maps the main Zeitraum granularity to the bar unit used in the "Verlauf" chart tab
-  const CHART_SUBGRAN = { month: "week", quarter: "month", year: "month" };
+  const CHART_SUBGRAN = { week: "day", month: "week", quarter: "month", year: "month" };
   const CHART_COLORS = [
     "#0d6efd", "#6610f2", "#d63384", "#fd7e14", "#198754",
     "#20c997", "#0dcaf0", "#6f42c1", "#dc3545", "#ffc107"
